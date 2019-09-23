@@ -19,6 +19,14 @@ A reuseable Django application for coupon gereration and handling
    $ python manage.py migrate
    ```
 
+## How to UpGrade
+Since the django require `on_delete` parameter for ForeignKey, The previous migrations
+is nolong usable.  If you are upgrading the django-coupons, please fake the first migrations. Then you can migrate the rest migrations. If there is any problem, maybe you will have to manually modify the django migrations table.
+```
+python3 manage.py migrate --fake coupons 0001
+python3 manage.py migrate coupons
+```
+
 ## Supported use cases of coupons
 
 This application supports different kind of coupons in the way how they can be redeemed.

@@ -1,11 +1,14 @@
 from datetime import timedelta
 
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.test import TestCase
 
 from coupons.forms import CouponGenerationForm, CouponForm
 from coupons.models import Coupon, CouponUser
+
+
+User = get_user_model()
 
 
 class CouponGenerationFormTestCase(TestCase):
