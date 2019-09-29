@@ -29,7 +29,7 @@ setup(
     ],
     install_requires=[
         "django >= 1.11, < 3",
-        "djangorestframework >= 3.10",
+        "djangorestframework",
         "django-filter",
     ],
 )
