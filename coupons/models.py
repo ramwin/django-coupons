@@ -1,6 +1,7 @@
 import random
 
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.db import IntegrityError
 from django.db import models
 from django.dispatch import Signal
@@ -18,10 +19,7 @@ from .settings import (
 )
 
 
-try:
-    user_model = settings.AUTH_USER_MODEL
-except AttributeError:
-    from django.contrib.auth.models import User as user_model
+user_model = get_user_model()
 redeem_done = Signal(providing_args=["coupon"])
 
 

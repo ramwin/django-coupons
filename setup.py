@@ -28,6 +28,8 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     install_requires=[
-        "django >= 1.11, < 3"
+        "django >= 1.11, < 3",
+        "djangorestframework >= 3.10",
+        "django-filter",
     ],
 )
