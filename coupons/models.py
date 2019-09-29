@@ -135,7 +135,7 @@ class Coupon(models.Model):
 
 @python_2_unicode_compatible
 class Campaign(models.Model):
-    name = models.CharField(_("Name"), max_length=255, unique=True)
+    name = models.CharField(_("Name"), max_length=50, unique=True)
     description = models.TextField(_("Description"), blank=True)
 
     class Meta:
