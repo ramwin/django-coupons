@@ -28,6 +28,6 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     install_requires=[
-        "django >= 1.11"
+        "django>=1.11"
     ],
 )
