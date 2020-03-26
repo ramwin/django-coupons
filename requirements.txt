@@ -1,5 +1,6 @@
 # coupons itself, required to make global django-admin.py work
 -e .
 
-django >= 1.11, <3
+django >= 1.11
+django-rest-framework
 coverage
