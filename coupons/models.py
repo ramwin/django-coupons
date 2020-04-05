@@ -5,7 +5,6 @@ from django.contrib.auth import get_user_model
 from django.db import IntegrityError
 from django.db import models
 from django.dispatch import Signal
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
@@ -62,7 +61,6 @@ class CouponManager(models.Manager):
         return self.filter(valid_until__lt=timezone.now())
 
 
-@python_2_unicode_compatible
 class Coupon(models.Model):
     value = models.IntegerField(_("Value"), help_text=_("Arbitrary coupon value"))
     code = models.CharField(
@@ -133,7 +131,6 @@ class Coupon(models.Model):
         redeem_done.send(sender=self.__class__, coupon=self)
 
 
-@python_2_unicode_compatible
 class Campaign(models.Model):
     name = models.CharField(_("Name"), max_length=50, unique=True)
     description = models.TextField(_("Description"), blank=True)
@@ -147,7 +144,6 @@ class Campaign(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class CouponUser(models.Model):
     coupon = models.ForeignKey(Coupon, related_name='users',
                                on_delete=models.CASCADE)
