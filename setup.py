@@ -7,6 +7,7 @@ import coupons
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+
 setup(
     name='django2-coupons',
     version=coupons.__version__,
